@@ -13,5 +13,8 @@
     "sirice",
     "hexo-theme"
   ],
-  "author": "Sirice"
+  "author": "Sirice",
+  "dependencies": {
+    "hexo-permalink-pinyin": "^1.1.0"
+  }
 }

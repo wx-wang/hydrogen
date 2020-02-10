@@ -1,6 +1,7 @@
 ---
 title: About
 layout: About
+type: "About"
 date: 2020-01-19 15:13:14
 ---
 ## 关于本博客：
