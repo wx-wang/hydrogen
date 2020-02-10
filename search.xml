@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>读书笔记：中国历代政治得失</title>
+      <link href="/2020/02/10/du-shu-bi-ji-zhong-guo-li-dai-zheng-zhi-de-shi/"/>
+      <url>/2020/02/10/du-shu-bi-ji-zhong-guo-li-dai-zheng-zhi-de-shi/</url>
+      
+        <content type="html"><![CDATA[<h1><span id="总评">总评</span></h1><h2><span id="总体架构">总体架构</span></h2><h3><span id="分析框架">分析框架</span></h3><p>从以下部分，对中国历代政权进行分析：</p><ol><li>政府与皇室的关系；</li><li>中央与地方的关系；</li><li>经济制度；</li><li>政治制度；</li><li>人才选拔制度；</li><li>军事制度；</li></ol><h3><span id="感受及摘抄">感受及摘抄</span></h3><p>“每一制度，必须针对现实，时时刻刻求其能变动适应。”但本源精神还在。<br></p><p>“革命本质：推翻制度迁就现实，而非推翻现实迁就制度。”</p><p>钱老传达了这样的<strong>观点</strong>：</p><ol><li>探寻制度的本质，每一个制度有其优越性，但也有其时代局限性；每一项制度在创立的初期都解决了当前的困境，但随着时间的流逝，其潜在的问题也将会暴露出来。举例来说，陈群创立的九品中正制，在初期解决了混乱政权时期人才选拔的困难，但大中正集于首都造成了矛盾：中央强而地方弱，官员执政以社会名誉为导向；而汉代的察举制也最终导致世族的形成。<br></li><li>中外制度：不是说西方的制度就一定是好的，中国的制度一定就是差的。<strong>“革命本质：推翻制度迁就现实，而非推翻现实迁就制度。”</strong>反应了钱老的观点，即任何制度要考虑其合理性，而非一味套用。<br></li></ol><p>我的<strong>想法</strong>：<br></p><ol><li>赞同钱老关于制度变化的观点。没有完美的制度，一个制度看似解决了当下的问题，但随着时间的流逝，相关问题就会凸显出来，因此一项制度的设计必须是与时俱进的，能顺应时代潮流。</li><li>关于差异，我认为任何制度的产生都有其不断试错的过程。以史为鉴，知兴替，以近代为例，中国在遭遇挫折时，学习西方的先进文化，从器物，到思想，从封建，到君主立宪，到民主共和，共产主义，都是在不断的试错中摸索出属于自己的方式方法。“中国特色”应该是适合当下国情的。以此为借鉴，一个国家的政策变化也是不断发展和螺旋上升。</li><li>从个人角度，似乎很难抵挡这样的历史大潮，凭借一己之力改变一切。</li></ol><h1><span id="20200210日唐代部分">2020.02.10日：唐代部分</span></h1><h2><span id="政治制度">政治制度</span></h2><h3><span id="中央">中央</span></h3><p>宰相采用委员制，从汉代的<strong>三公九卿</strong>变为<strong>三省六部</strong>制。<br><br>三省六部：</p><ul><li>中书省，门下省，尚书省；</li><li>六部，与汉代相比，与皇室职能相比更偏向于政府职能；</li><li>中书省发布敕令，门下省审核，尚书省执行；</li><li>为了提高效率，形成“政事堂”，避免命令需要反复被修改；</li></ul><p>不专制：体现于“斜封墨敕”</p><h3><span id="地方">地方</span></h3><table><thead><tr><th>项目</th><th>汉代</th><th>唐代</th><th>影响</th></tr></thead><tbody><tr><td>制度</td><td>郡县</td><td>州县</td><td>大致相同</td></tr><tr><td>级次与数量</td><td>少，地方官员开转灵活，各安其位</td><td>多，地方低级官员不易升迁</td><td>唐代官员不易升迁，权力集于中央</td></tr><tr><td>监察方面</td><td>—-</td><td>—-</td><td>唐代监察官员长期驻扎于地方，有实权，最终变为节度使；本是加大中央集权，但后期尾大不掉，节度使掌管军事，财政，人事大权</td></tr></tbody></table><h2><span id="人才选拔制度">人才选拔制度</span></h2><p>查举制→九品中正制→科举制<br></p><p>缺陷：不允许工商业人士加入科举，导致人才全集中于官场。</p><h2><span id="经济制度">经济制度</span></h2><p>户口统计的困难，导致赋税按上方摊派，穷的地方逃亡，人均税负更高，富的地方更低，导致贫富分化；<br></p><p>土地兼并问题无法解决。</p><h2><span id="军事制度">军事制度</span></h2><p>唐代采用府兵制，划分一片区域，由一部分家庭条件好的人自愿参军，参军边务农；<br></p><p>后期的问题：</p><ol><li>政府执行力下降，军人不能得到有效抚恤；</li><li>政府执行力下降，军人戍边无法轮替；</li><li>由1 2产生的问题，雇佣外籍军团，最终自食其果；</li></ol><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 读书笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 读书笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>呆在家中，我需要：</title>
       <link href="/2020/01/31/ai-zai-jia-zhong-wo-xu-yao/"/>
       <url>/2020/01/31/ai-zai-jia-zhong-wo-xu-yao/</url>
