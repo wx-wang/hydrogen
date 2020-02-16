@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>matlab编程风格学习笔记</title>
+      <link href="/2020/02/16/matlab-bian-cheng-feng-ge-xue-xi-bi-ji/"/>
+      <url>/2020/02/16/matlab-bian-cheng-feng-ge-xue-xi-bi-ji/</url>
+      
+        <content type="html"><![CDATA[<h1><span id="写在前面">写在前面</span></h1><p>深感自己写的matlab程序可读性很差，在过了一段时间以后再阅读自己的程序就显得不知所云。有必要进行必要的编程风格的训练，在网上找到了《matlab编程风格》很有收获，因此将自己需要注意的地方总结了下来，希望之后的编程能按照这种风格进行，提高自己程序的可读性。</p><h1><span id="命名规则">命名规则</span></h1><h2><span id="变量">变量</span></h2><ol><li>变量名应该以<strong>小写字母开头的大小写混合形式</strong>；（exa：linearity ，credibleThreat，qualityofLife ）</li><li>应用范围比较大的变量应该具有有意义的变量名，小范围应用的变量应该用短的变量名 ；</li><li>前缀 n应该用在作为数值对象的申明的时候；（exa： nFiles，nSegments ）；</li><li>循环变量应该以i j k等为前缀（exa：iFile）；当应用中有复数数据的时候，应该禁用i j，因为他们都是作为虚数单位使用；</li><li>对于嵌套循环，循环变量应该以字母表的顺序；</li><li>缩写形式，即使是通常的大写缩写，也应该于小写字母混合使用；</li></ol><h2><span id="常数">常数</span></h2><ol><li>命名常数（包括全局变量）应该采用大写字母，用下划线分割单词（exa：MAX_ITERATIONS）；</li><li>参数可以以某些通用类型名作为前缀；（exa：COLOR_RED COLOR_BLUE）；</li></ol><h2><span id="函数">函数</span></h2><ol><li>函数名应该采用小写字母；</li><li>函数名应该是具有意义的，不应简写，以增加后来者的可读性；</li><li>没有输出变量或者返回值为句柄的函数应该根据其实现的功能命名；</li><li>前缀 get/set 应该作为访问对象或者属性的保留前缀；</li><li>前缀 compute 应该用在计算某些量的函数的地方；</li><li>前缀 find 可以用在那些具有查询功能的函数的地方；</li><li>前缀 initialize 可以用在对象或者是概念（concept）建立的地方；</li></ol><h1><span id="文件与程序结构">文件与程序结构</span></h1><h2><span id="m文件">M文件</span></h2><ol><li>模块化；<strong>编写一个大程序的最好的方法是将它以好的设计分化为小块（通常采用函数的方式）</strong>。这种方式通过减少为了理解代码的作用而必须阅读的代码数量使得程序的可读性、易于理解性和可测试性得到了增强。<strong>超过编辑器两屏幕的代码都应该考虑进行分割。</strong>并且设计规划很好的函数也使得它在其他的应用中可用性增强了；</li><li>确保交互过程清晰；</li><li>利用现有的函数；</li><li>子函数； </li></ol><h2><span id="输入输出">输入输出</span></h2><ol><li><strong>避免将输入/输出部分的代码与计算功能的代码混淆在一起</strong>，单个函数的预处理的时候除外。各种功能混合的函数的可再用性一遍很小；</li><li>如果输出很大可能是人工阅读，那么就让输出采用易于越多的描述性的方式；如果输出更多的可能是通过其他软件调用而不是人，那么应该使得输出易于解析；</li></ol><h1><span id="基本语句">基本语句</span></h1><h2><span id="变量与常数">变量与常数</span></h2><ol><li>变量不应该重复使用（赋予为不同意义）， 除非因为内存限制的需要；</li><li>同种类型的相近的变量可以在同一个语句中定义；</li><li>注意在文件开始部分的注释中为重要变量编写文档；</li><li>注意在语句行注释的最后为常数编写文档； </li></ol><h2><span id="循环语句">循环语句</span></h2><ol><li>循环变量应该在循环开始前立即被赋值，提高计算速度；</li><li>在循环中应该尽量少用 break 与 continue；</li><li>在嵌套式循环的时候应该在 end 行加上注释；</li></ol><h2><span id="条件语句">条件语句</span></h2><ol><li>应该避免复杂的条件表示式，而采用临时逻辑变量进行替代；</li><li>在if else 结构的时候，发生较频繁的事件应该放在 if 部分，例外情况放在 else 部分；</li></ol><h1><span id="总结">总结</span></h1><ol><li>避免含糊代码；</li><li>采用附加说明；</li><li>尽量在表达式中少用数字。可能会改变的数字应该用常数代替；</li><li>浮点常数应该在小数点前面写上一个阿拉伯数据；</li></ol><h2><span id="排版-注释-文档">排版 注释 文档</span></h2><h3><span id="排版">排版</span></h3><ol><li>应该将代码内容控制在<strong>前80列之内</strong>；</li><li>空白空格通过将各个单独组成部分的语句独立出来而增强了程序的可读性。<strong>在=，&amp;， |前后加空格</strong>； <strong>逗号后面可以加上空格</strong>； </li><li><strong>块（blocks）之间应该用多行空白行分隔</strong>，或用注释符号后跟多个*； </li></ol><h3><span id="注释">注释</span></h3><ol><li>在写代码的同时就加上注释比后来再补充注释要好；</li><li>注释文字应该简洁易读；</li><li>函数头部的注释应该讨论对输入参数的特殊要求等；</li><li>函数头的注释应该描述其任何副作用（side effects）；</li><li>通常情况下，函数头注释的最后一句应该是重申函数语句行；</li></ol><h3><span id="文档">文档</span></h3><ol><li>首先考虑书写文档；</li><li>对于很简单的工程，在函数文件的注释中加入修改历史比什么都不做要好；</li></ol><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习笔记 </category>
+          
+          <category> matlab </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> matlab </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>读书笔记：中国历代政治得失</title>
       <link href="/2020/02/10/du-shu-bi-ji-zhong-guo-li-dai-zheng-zhi-de-shi/"/>
       <url>/2020/02/10/du-shu-bi-ji-zhong-guo-li-dai-zheng-zhi-de-shi/</url>
