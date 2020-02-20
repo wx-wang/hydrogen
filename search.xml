@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>英语学习日记——Day1</title>
+      <link href="/2020/02/20/ying-yu-xue-xi-ri-ji-day1/"/>
+      <url>/2020/02/20/ying-yu-xue-xi-ri-ji-day1/</url>
+      
+        <content type="html"><![CDATA[<h1><span id="day1-写作图表题介绍曲线图">Day1 写作图表题————介绍，曲线图</span></h1><h2><span id="图表题写作步骤">图表题写作步骤</span></h2><ol><li>读懂图表；包括文字说明，图标标题，数据，坐标轴等；</li><li>确定时态（现在，过去，将来）；</li><li>提取关键信息（总体趋势，不同）；</li><li>安排全文结构；</li></ol><h2><span id="开头-改写题目">开头 改写题目</span></h2><p>The graph/chart describes/illustrates …<br></p><h2><span id="中间结构">中间结构</span></h2><h3><span id="常用词汇">常用词汇</span></h3><ul><li>上升： rise, climb, increase, grow;</li><li>下降： decline, fall, drop;</li><li>平滑： level off, stabilize(n. stabilization);</li></ul><h3><span id="修饰性词汇">修饰性词汇</span></h3><ul><li>变化幅度大： sharp, marked, significant, dramatic;</li><li>变化幅度小： slight, moderate, gradual, steady;</li><li>exa: the period between A and B witnessed a sharp increase in …</li></ul><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 英语 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 英语学习 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>matlab编程风格学习笔记</title>
       <link href="/2020/02/16/matlab-bian-cheng-feng-ge-xue-xi-bi-ji/"/>
       <url>/2020/02/16/matlab-bian-cheng-feng-ge-xue-xi-bi-ji/</url>
