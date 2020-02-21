@@ -2,7 +2,7 @@
 title: 英语学习日记
 date: 2020-02-20 17:12:26
 tags: 英语学习
-categories : 英语
+categories : [英语, 学习笔记]
 ---
 
 # Day1 写作图表题————介绍，曲线图
