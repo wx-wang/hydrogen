@@ -117,7 +117,8 @@ theme: hexo-theme-matery-master
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://gitee.com/wx-wang/wx-wang.git
-#    github: https://github.com/wx-wang/wx-wang.github.io
-#    gitee:  https://gitee.com/wx-wang/wx-wang.git
+  repo: 
+    github: https://github.com/wx-wang/wx-wang.github.io
+    coding: https://e.coding.net/wxwang/wx-wang.git
+    gitee:  https://gitee.com/wx-wang/wx-wang.git
   branch: master
