@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Abaqus子程序关联教程</title>
+      <link href="/2020/02/27/abaqus-zi-cheng-xu-guan-lian-jiao-cheng/"/>
+      <url>/2020/02/27/abaqus-zi-cheng-xu-guan-lian-jiao-cheng/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="写在开头">写在开头</span></h2><p>本教程搜集于2018年，当时为了装abaqus子程序可谓是煞费苦心。故记录在此，以飨自己。<br></p><h2><span id="限制条件">限制条件</span></h2><p>目前可<strong>成功安装6.14和2016版本</strong>。其他版本的欢迎尝试。教程参考了：<a href="https://wenku.baidu.com/view/5db671e74a7302768f99392e.html" target="_blank" rel="noopener">参考1</a>，<a href="https://wenku.baidu.com/view/523f5ae1bdeb19e8b8f67c1cfad6195f302be800.html" target="_blank" rel="noopener">参考2</a><br></p><h2><span id="start">Start</span></h2><p>ABAQUS要是想调用子程序，需要以下几个软件进行关联：<strong>Microsoft Visual Studio 12.0、Intel Visual Fortran Composer XE 2013</strong>。具体安装过程不多说，可百度。需要注意顺序：<strong>先Visual Studio，再Fortran</strong>。<br></p><p>如何关联？只需要<strong>这两行代码：</strong></p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@call "H:\Microsoft Visual Studio 12.0\VC\vcvarsall.bat" X64</span><br><span class="line">@call "H:\Program Files (x86)\Intel\Composer XE 2013 SP1\bin\ipsxe-comp-vars.bat" intel64 vs2012</span><br><span class="line">// 两行代码对应的位置分别是vcvarsall.bat、ipsxe-comp-vars.bat两个文件的地址</span><br></pre></td></tr></tbody></table></figure><p>对于ABAQUS2016，找到launcher.bat文件进行编辑，将上述两句插入到最开头即可（<strong>bat文件位置示例：</strong><code>H:\SIMULIA\CAE\2016\win_b64\resources\install\cae</code>）。<br></p><p>之后，运行Abaqus Verification，就成功关联。<br></p><p>享受你的科研之旅吧！🙂</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+            <tag> Abaqus </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>吴恩达机器学习笔记</title>
       <link href="/2020/02/21/wu-en-da-ji-qi-xue-xi-bi-ji/"/>
       <url>/2020/02/21/wu-en-da-ji-qi-xue-xi-bi-ji/</url>
