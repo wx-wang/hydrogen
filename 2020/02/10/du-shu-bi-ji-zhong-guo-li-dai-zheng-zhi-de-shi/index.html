@@ -391,7 +391,8 @@
 <li>为了提高效率，形成“政事堂”，避免命令需要反复被修改；</li>
 </ul>
 <p>不专制：体现于“斜封墨敕”</p>
-<h3><span id="地方">地方</span></h3><table>
+<h3><span id="地方">地方</span></h3><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>项目</th>
@@ -400,7 +401,8 @@
 <th>影响</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>制度</td>
 <td>郡县</td>
 <td>州县</td>
@@ -414,11 +416,13 @@
 </tr>
 <tr>
 <td>监察方面</td>
-<td>—-</td>
-<td>—-</td>
+<td>——</td>
+<td>——</td>
 <td>唐代监察官员长期驻扎于地方，有实权，最终变为节度使；本是加大中央集权，但后期尾大不掉，节度使掌管军事，财政，人事大权</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h2><span id="人才选拔制度">人才选拔制度</span></h2><p>查举制→九品中正制→科举制<br></p>
 <p>缺陷：不允许工商业人士加入科举，导致人才全集中于官场。</p>
 <h2><span id="经济制度">经济制度</span></h2><p>户口统计的困难，导致赋税按上方摊派，穷的地方逃亡，人均税负更高，富的地方更低，导致贫富分化；<br></p>
@@ -748,6 +752,9 @@
                     <div class="summary block-with-text">
                         
                             
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return
                         
                     </div>
                     <div class="publish-info">
@@ -1028,7 +1035,24 @@ $(function () {
     
     
     
-    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
     
 
 </body>

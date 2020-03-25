@@ -348,7 +348,7 @@ Markdown下LaTeX公式、编号、对齐
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    774
+                    769
                 </div>
                 
 
@@ -370,20 +370,34 @@ Markdown下LaTeX公式、编号、对齐
 <li><a href="https://www.jianshu.com/p/05987743d27c" target="_blank" rel="noopener">Latex的公式输入</a></li>
 <li><a href="https://www.zybuluo.com/fyywy520/note/82980" target="_blank" rel="noopener">Markdown下LaTeX公式、编号、对齐</a></li>
 </ol>
-<h2><span id="神经网络算法介绍">神经网络算法介绍</span></h2><p>神经网络包括：<strong>输入层，隐藏层，输出层</strong>。取一个隐含层$i$，包括输入值$\vec{a}$，权值矩阵$\bf{W}$，输出值$\vec{o}$。关于输入值与输出值，有这样一个关系：<br>$$a_i^j = \sum_{i=1}^{i=p}{w_{ki}^{j-1}o_k^{j-1}} \tag{1}$$<br>$$o_i^j = f(a_i^j) \tag{2}$$</p>
-<p>其中，$f(x)$为sigmod函数 ：$f(x)=\frac{1}{1+e^{-x}}$。其中，上角标j代表第j层神经网络，下角标i代表第i个神经元。以向量和矩阵形式表达，则可得到：<br>$$\vec{a^j}=W^{j-1}\vec{o^{j-1}} \tag{3}$$<br>其中：<br>$$W^{j} = \begin{bmatrix} w_{11} &amp; w_{21} &amp; \cdots &amp; w_{p1}\<br>\cdots &amp; \cdots \<br> w_{1q} &amp; w_{2q} &amp; \cdots &amp; w_{pq}\end{bmatrix}^{j-1}<em>{q\times p},<br> \vec{a^j}=\begin{Bmatrix}<br>a_1\a_2\ \cdots \a_p<br>\end{Bmatrix}</em>{p\times1}^{j}$$</p>
-<p>$$\vec{o^j}=\begin{Bmatrix}<br>o_1\o_2\ \cdots \o_p<br>\end{Bmatrix}_{p\times1}^{j}$$</p>
-<p>在输入$x$后，通过给定的权值，每一层都可经过公式（1）和公式（2）神经网络正向反馈，可得到输出值$\hat y$。</p>
+<h2><span id="神经网络算法介绍">神经网络算法介绍</span></h2><p>神经网络包括：<strong>输入层，隐藏层，输出层</strong>。取一个隐含层$i$，包括输入值$\vec{a}$，权值矩阵$\bf{W}$，输出值$\vec{o}$。关于输入值与输出值，有这样一个关系：</p>
+<script type="math/tex; mode=display">a_i^j = \sum_{i=1}^{i=p}{w_{ki}^{j-1}o_k^{j-1}} \tag{1}</script><script type="math/tex; mode=display">o_i^j = f(a_i^j) \tag{2}</script><p>其中，$f(x)$为sigmod函数 ：$f(x)=\frac{1}{1+e^{-x}}$。其中，上角标j代表第j层神经网络，下角标i代表第i个神经元。以向量和矩阵形式表达，则可得到：</p>
+<script type="math/tex; mode=display">\vec{a^j}=W^{j-1}\vec{o^{j-1}} \tag{3}</script><p>其中：</p>
+<script type="math/tex; mode=display">W^{j} = \begin{bmatrix} w_{11} & w_{21} & \cdots & w_{p1}\\
+\cdots & \cdots \\
+ w_{1q} & w_{2q} & \cdots & w_{pq}\end{bmatrix}^{j-1}_{q\times p},
+ \vec{a^j}=\begin{Bmatrix}
+a_1\\a_2\\ \cdots \\a_p
+\end{Bmatrix}_{p\times1}^{j}</script><script type="math/tex; mode=display">\vec{o^j}=\begin{Bmatrix}
+o_1\\o_2\\ \cdots \\o_p
+\end{Bmatrix}_{p\times1}^{j}</script><p>在输入$x$后，通过给定的权值，每一层都可经过公式（1）和公式（2）神经网络正向反馈，可得到输出值$\hat y$。</p>
 <h2><span id="bp反向传播算法推导">BP反向传播算法推导</span></h2><p>为了让神经网络算法能够较好拟合出所需要的结果，需要对参数W进行训练。对于复杂的神经网络，可采用BP算法进行反向传播推导。而在训练时，对于参数的训练，可采用梯度下降法进行训练：</p>
-<p>$$w = w - \lambda \frac{\partial C}{\partial w} \tag{4}$$</p>
-<p>其中，$\lambda$为学习率，C为损失函数(cost function)。对于神经网络，定义损失函数为：</p>
-<p>$$C = \frac{1}{2}||\hat y - y||_2 \tag{5}$$</p>
-<p>进行训练参数推导。假设神经网络共有L层，对于最后一层，有：</p>
-<p>$$<br>\Delta{w} = -\lambda \frac{\partial C}{\partial w}<br>= -\lambda \frac{\partial C}{\partial a^L} \frac{\partial a^L}{\partial w}<br>= -\lambda \frac{\partial C}{\partial a^L} (o^{L-1})^T<br>$$<br>令误差$\epsilon^L=\frac{\partial C}{\partial a^L}$，为了求隐藏层中的权重系数W，不妨采用数学归纳法，当已知$\epsilon^i$时，求$\epsilon^{i-1}$：</p>
-<p>$$<br>\epsilon^{i-1}=\frac{\partial C}{\partial a^{L-1}}<br>=\frac{\partial C}{\partial o^{L-1}}\frac{\partial o^{L-1}}{\partial a^{L-1}}<br>=\frac{\partial C}{\partial a^{L}}\frac{\partial a^{L}}{\partial o^{L-1}}\frac{\partial o^{L-1}}{\partial a^{L-1}}<br>=\epsilon^{i}W^Lf’(a^{L-1})<br>$$</p>
-<p>考虑到矩阵偏导与标量求偏导有所不同（参考<a href="https://www.cnblogs.com/pinard/p/10825264.html" target="_blank" rel="noopener">4</a>），误差可写为：</p>
-<p>$$<br>\epsilon^{i-1}=\frac{\partial C}{\partial a^{L-1}}<br>=\frac{\partial o^{L-1}}{\partial a^{L-1}}^T\frac{\partial C}{\partial o^{L-1}}<br>=\frac{\partial o^{L-1}}{\partial a^{L-1}}^T\frac{\partial a^{L}}{\partial o^{L-1}}^T\frac{\partial C}{\partial a^{L}}<br>=f’(a^{L-1})^T(W^L)^T\epsilon^{i}<br>$$</p>
-<p>由此进行迭代，最终可求得训练参数值。</p>
+<script type="math/tex; mode=display">w = w - \lambda \frac{\partial C}{\partial w} \tag{4}</script><p>其中，$\lambda$为学习率，C为损失函数(cost function)。对于神经网络，定义损失函数为：</p>
+<script type="math/tex; mode=display">C = \frac{1}{2}||\hat y - y||_2 \tag{5}</script><p>进行训练参数推导。假设神经网络共有L层，对于最后一层，有：</p>
+<script type="math/tex; mode=display">
+\Delta{w} = -\lambda \frac{\partial C}{\partial w}
+= -\lambda \frac{\partial C}{\partial a^L} \frac{\partial a^L}{\partial w}
+= -\lambda \frac{\partial C}{\partial a^L} (o^{L-1})^T</script><p>令误差$\epsilon^L=\frac{\partial C}{\partial a^L}$，为了求隐藏层中的权重系数W，不妨采用数学归纳法，当已知$\epsilon^i$时，求$\epsilon^{i-1}$：</p>
+<script type="math/tex; mode=display">
+\epsilon^{i-1}=\frac{\partial C}{\partial a^{L-1}}
+=\frac{\partial C}{\partial o^{L-1}}\frac{\partial o^{L-1}}{\partial a^{L-1}}
+=\frac{\partial C}{\partial a^{L}}\frac{\partial a^{L}}{\partial o^{L-1}}\frac{\partial o^{L-1}}{\partial a^{L-1}}
+=\epsilon^{i}W^Lf'(a^{L-1})</script><p>考虑到矩阵偏导与标量求偏导有所不同（参考<a href="https://www.cnblogs.com/pinard/p/10825264.html" target="_blank" rel="noopener">4</a>），误差可写为：</p>
+<script type="math/tex; mode=display">
+\epsilon^{i-1}=\frac{\partial C}{\partial a^{L-1}}
+=\frac{\partial o^{L-1}}{\partial a^{L-1}}^T\frac{\partial C}{\partial o^{L-1}}
+=\frac{\partial o^{L-1}}{\partial a^{L-1}}^T\frac{\partial a^{L}}{\partial o^{L-1}}^T\frac{\partial C}{\partial a^{L}}
+=f'(a^{L-1})^T(W^L)^T\epsilon^{i}</script><p>由此进行迭代，最终可求得训练参数值。</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1011,7 +1025,24 @@ $(function () {
     
     
     
-    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
     
 
 </body>

@@ -333,14 +333,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-02-07
+                    2020-02-27
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.6k
+                    2.7k
                 </div>
                 
 
@@ -365,7 +365,25 @@
 <p>一是欧俄关系将迎来缓和改善的新机遇。英国是欧盟最坚定的大西洋主义国家，在贸易自由与安全政策领域，推动欧盟与美国接近。乌克兰危机使得欧俄关系陷入僵局，英国对俄立场强硬，主张欧美联手加大对俄制裁。英国脱欧后，英欧的相互制约松解，欧盟内部对俄温和力量上升，欧俄关系改善的可能性增加，俄罗斯在欧洲大陆的影响力和全球地位将逐渐恢复，亚欧大陆的政治版图也许因此发生变化。<br></p>
 <p>二是助长反一体化、反全球化思潮的兴起。英国脱欧不只是经济和政治利益博弈的结果，也是对区域治理价值导向和欧洲一体化前途命运的抉择。在一定意义上，脱欧是对以合作和开放为价值基础的区域一体化进程的否定。英国脱欧在很大程度上昭示着底层民众对社会现状的不满，对由西方精英阶层主导的欧洲一体化和全球化的抗拒。英国完成脱欧后，这股反一体化、反全球化思潮可能表现更为明显，威胁着一体化和全球化发展的进程。<br></p>
 <p>三是世界政治格局和全球治理变革复杂化。作为世界多极化格局中的重要一极，欧盟主张多边主义和合作主义，积极推进区域共治和全球治理，特别是在多边贸易、气候变化、发展援助等领域发挥重要的作用。一个团结、强大、稳定的欧盟无疑是当今全球治理体系变革不可忽视的力量，但英国脱欧使欧盟的整体实力、外交资源及其治理能力受到损减，其全球作用的发挥也将增加许多制约，甚至给新时期的全球化进程与全球治理增加新的阻力和不确定性。同时，作为老牌资本主义国家和世界经济政治大国，英国失去欧盟成员国资格，不能依托欧盟在欧洲和世界事务中发挥作用，其国际地位和影响也将失去昔日的显赫和光芒。国际力量对比和世界政治格局或将由此发生变化。<strong>（吴志成 作者系天津市中国特色社会主义理论体系研究中心南开大学基地教授、南开大学全球问题研究所所长）</strong></p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
             <hr/>
 
@@ -616,6 +634,9 @@
                     <div class="summary block-with-text">
                         
                             
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return
                         
                     </div>
                     <div class="publish-info">
@@ -946,7 +967,24 @@ $(function () {
     
     
     
-    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
     
 
 </body>

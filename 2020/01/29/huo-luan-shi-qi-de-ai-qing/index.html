@@ -363,7 +363,25 @@
 <p>是吧，看似我们的日常，很无趣，似乎都要长了草（引用你的原话），可是在这平淡之中，似乎有着返璞归真的感觉——没有大城市的喧嚣，家里的床特别软和，一天三顿饭特别的香（抱歉，是之前我的厨艺不精了），无忧无虑，就好像刘禹锡写的那样：“无丝竹之乱耳，无案牍之劳形”，这也算是这场灾难能带给我们的一丝丝补偿吧！<br></p>
 <p>说回我们。与平时我们的交流相比，最近我们的交流中，掺杂了两个人之外的事情——和家人之间的相处，相比较平时，终究还是占据了我们的一些空间。仔细想来，未来的某一天，你能坐下来，和我一起陪着我的外婆阿姨们打打牌，和奶奶唠唠嗑；我会坐下来，再与你弟弟手谈几局，和你爹交流一些建设装修的事情，其实也是很和谐的呢！希望这样的日子，会快些到来😀<br></p>
 <p>anyway,这种轻松的生活要靠我们自己争取。庚子年，我们相恋的第六年之交，我会继续努力，承担起一位男朋友应尽的责任，也希望美好的未来能靠自己的双手创造！<br></p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
             <hr/>
 
@@ -960,7 +978,24 @@ $(function () {
     
     
     
-    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
     
 
 </body>

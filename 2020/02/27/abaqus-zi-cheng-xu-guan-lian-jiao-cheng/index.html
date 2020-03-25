@@ -359,7 +359,6 @@ StartABAQUS要是想调用子程序，需要以">
 <h2><span id="start">Start</span></h2><p>ABAQUS要是想调用子程序，需要以下几个软件进行关联：<strong>Microsoft Visual Studio 12.0、Intel Visual Fortran Composer XE 2013</strong>。具体安装过程不多说，可百度。需要注意顺序：<strong>先Visual Studio，再Fortran</strong>。<br></p>
 <p>如何关联？只需要<strong>这两行代码：</strong></p>
 <figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@call "H:\Microsoft Visual Studio 12.0\VC\vcvarsall.bat" X64</span><br><span class="line">@call "H:\Program Files (x86)\Intel\Composer XE 2013 SP1\bin\ipsxe-comp-vars.bat" intel64 vs2012</span><br><span class="line">// 两行代码对应的位置分别是vcvarsall.bat、ipsxe-comp-vars.bat两个文件的地址</span><br></pre></td></tr></tbody></table></figure>
-
 <p>对于ABAQUS2016，找到launcher.bat文件进行编辑，将上述两句插入到最开头即可（<strong>bat文件位置示例：</strong><code>H:\SIMULIA\CAE\2016\win_b64\resources\install\cae</code>）。<br></p>
 <p>之后，运行Abaqus Verification，就成功关联。<br></p>
 <p>享受你的科研之旅吧！🙂</p>
@@ -992,7 +991,24 @@ $(function () {
     
     
     
-    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
     
 
 </body>
