@@ -4,10 +4,17 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Abaqus子程序关联教程, 日常 学习 生活">
-    <meta name="description" content="写在开头本教程搜集于2018年，当时为了装abaqus子程序可谓是煞费苦心。故记录在此，以飨自己。
-限制条件目前可成功安装6.14和2016版本。其他版本的欢迎尝试。教程参考了：参考1，参考2
-StartABAQUS要是想调用子程序，需要以">
+    <meta name="keywords" content="神经网络BP法推导, 日常 学习 生活">
+    <meta name="description" content="参考文献：
+吴恩达机器学习；
+周志华《机器学习》
+神经网络，BP算法的理解与推导
+矩阵向量求导链式法则
+MarkDown 插入数学公式实验大集合
+Latex的公式输入
+Markdown下LaTeX公式、编号、对齐
+
+神经网络算法介绍神经网络">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +22,7 @@ StartABAQUS要是想调用子程序，需要以">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Abaqus子程序关联教程 | 王伟轩</title>
+    <title>神经网络BP法推导 | 王伟轩</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -176,12 +183,12 @@ StartABAQUS要是想调用子程序，需要以">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Abaqus子程序关联教程</h1>
+                    <h1 class="description center-align post-title">神经网络BP法推导</h1>
                 </div>
             </div>
         </div>
@@ -298,12 +305,8 @@ StartABAQUS要是想调用子程序，需要以">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%95%99%E7%A8%8B/">
-                                <span class="chip bg-color">教程</span>
-                            </a>
-                        
-                            <a href="/tags/Abaqus/">
-                                <span class="chip bg-color">Abaqus</span>
+                            <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">机器学习</span>
                             </a>
                         
                     </div>
@@ -314,8 +317,12 @@ StartABAQUS要是想调用子程序，需要以">
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%95%99%E7%A8%8B/" class="post-category">
-                                教程
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                                学习笔记
+                            </a>
+                        
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="post-category">
+                                计算机
                             </a>
                         
                     </div>
@@ -327,21 +334,21 @@ StartABAQUS要是想调用子程序，需要以">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-02-27
+                    2020-03-25
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-02-27
+                    2020-03-25
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    307
+                    774
                 </div>
                 
 
@@ -354,15 +361,29 @@ StartABAQUS要是想调用子程序，需要以">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2><span id="写在开头">写在开头</span></h2><p>本教程搜集于2018年，当时为了装abaqus子程序可谓是煞费苦心。故记录在此，以飨自己。<br></p>
-<h2><span id="限制条件">限制条件</span></h2><p>目前可<strong>成功安装6.14和2016版本</strong>。其他版本的欢迎尝试。教程参考了：<a href="https://wenku.baidu.com/view/5db671e74a7302768f99392e.html" target="_blank" rel="noopener">参考1</a>，<a href="https://wenku.baidu.com/view/523f5ae1bdeb19e8b8f67c1cfad6195f302be800.html" target="_blank" rel="noopener">参考2</a><br></p>
-<h2><span id="start">Start</span></h2><p>ABAQUS要是想调用子程序，需要以下几个软件进行关联：<strong>Microsoft Visual Studio 12.0、Intel Visual Fortran Composer XE 2013</strong>。具体安装过程不多说，可百度。需要注意顺序：<strong>先Visual Studio，再Fortran</strong>。<br></p>
-<p>如何关联？只需要<strong>这两行代码：</strong></p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@call "H:\Microsoft Visual Studio 12.0\VC\vcvarsall.bat" X64</span><br><span class="line">@call "H:\Program Files (x86)\Intel\Composer XE 2013 SP1\bin\ipsxe-comp-vars.bat" intel64 vs2012</span><br><span class="line">// 两行代码对应的位置分别是vcvarsall.bat、ipsxe-comp-vars.bat两个文件的地址</span><br></pre></td></tr></tbody></table></figure>
-
-<p>对于ABAQUS2016，找到launcher.bat文件进行编辑，将上述两句插入到最开头即可（<strong>bat文件位置示例：</strong><code>H:\SIMULIA\CAE\2016\win_b64\resources\install\cae</code>）。<br></p>
-<p>之后，运行Abaqus Verification，就成功关联。<br></p>
-<p>享受你的科研之旅吧！🙂</p>
+                <h2><span id="参考文献">参考文献：</span></h2><ol>
+<li>吴恩达机器学习；</li>
+<li>周志华《机器学习》</li>
+<li><a href="https://zhuanlan.zhihu.com/p/45190898" target="_blank" rel="noopener">神经网络，BP算法的理解与推导</a></li>
+<li><a href="https://www.cnblogs.com/pinard/p/10825264.html" target="_blank" rel="noopener">矩阵向量求导链式法则</a></li>
+<li><a href="https://juejin.im/post/5a6721bd518825733201c4a2" target="_blank" rel="noopener">MarkDown 插入数学公式实验大集合</a></li>
+<li><a href="https://www.jianshu.com/p/05987743d27c" target="_blank" rel="noopener">Latex的公式输入</a></li>
+<li><a href="https://www.zybuluo.com/fyywy520/note/82980" target="_blank" rel="noopener">Markdown下LaTeX公式、编号、对齐</a></li>
+</ol>
+<h2><span id="神经网络算法介绍">神经网络算法介绍</span></h2><p>神经网络包括：<strong>输入层，隐藏层，输出层</strong>。取一个隐含层$i$，包括输入值$\vec{a}$，权值矩阵$\bf{W}$，输出值$\vec{o}$。关于输入值与输出值，有这样一个关系：<br>$$a_i^j = \sum_{i=1}^{i=p}{w_{ki}^{j-1}o_k^{j-1}} \tag{1}$$<br>$$o_i^j = f(a_i^j) \tag{2}$$</p>
+<p>其中，$f(x)$为sigmod函数 ：$f(x)=\frac{1}{1+e^{-x}}$。其中，上角标j代表第j层神经网络，下角标i代表第i个神经元。以向量和矩阵形式表达，则可得到：<br>$$\vec{a^j}=W^{j-1}\vec{o^{j-1}} \tag{3}$$<br>其中：<br>$$W^{j} = \begin{bmatrix} w_{11} &amp; w_{21} &amp; \cdots &amp; w_{p1}\<br>\cdots &amp; \cdots \<br> w_{1q} &amp; w_{2q} &amp; \cdots &amp; w_{pq}\end{bmatrix}^{j-1}<em>{q\times p},<br> \vec{a^j}=\begin{Bmatrix}<br>a_1\a_2\ \cdots \a_p<br>\end{Bmatrix}</em>{p\times1}^{j}$$</p>
+<p>$$\vec{o^j}=\begin{Bmatrix}<br>o_1\o_2\ \cdots \o_p<br>\end{Bmatrix}_{p\times1}^{j}$$</p>
+<p>在输入$x$后，通过给定的权值，每一层都可经过公式（1）和公式（2）神经网络正向反馈，可得到输出值$\hat y$。</p>
+<h2><span id="bp反向传播算法推导">BP反向传播算法推导</span></h2><p>为了让神经网络算法能够较好拟合出所需要的结果，需要对参数W进行训练。对于复杂的神经网络，可采用BP算法进行反向传播推导。而在训练时，对于参数的训练，可采用梯度下降法进行训练：</p>
+<p>$$w = w - \lambda \frac{\partial C}{\partial w} \tag{4}$$</p>
+<p>其中，$\lambda$为学习率，C为损失函数(cost function)。对于神经网络，定义损失函数为：</p>
+<p>$$C = \frac{1}{2}||\hat y - y||_2 \tag{5}$$</p>
+<p>进行训练参数推导。假设神经网络共有L层，对于最后一层，有：</p>
+<p>$$<br>\Delta{w} = -\lambda \frac{\partial C}{\partial w}<br>= -\lambda \frac{\partial C}{\partial a^L} \frac{\partial a^L}{\partial w}<br>= -\lambda \frac{\partial C}{\partial a^L} (o^{L-1})^T<br>$$<br>令误差$\epsilon^L=\frac{\partial C}{\partial a^L}$，为了求隐藏层中的权重系数W，不妨采用数学归纳法，当已知$\epsilon^i$时，求$\epsilon^{i-1}$：</p>
+<p>$$<br>\epsilon^{i-1}=\frac{\partial C}{\partial a^{L-1}}<br>=\frac{\partial C}{\partial o^{L-1}}\frac{\partial o^{L-1}}{\partial a^{L-1}}<br>=\frac{\partial C}{\partial a^{L}}\frac{\partial a^{L}}{\partial o^{L-1}}\frac{\partial o^{L-1}}{\partial a^{L-1}}<br>=\epsilon^{i}W^Lf’(a^{L-1})<br>$$</p>
+<p>考虑到矩阵偏导与标量求偏导有所不同（参考<a href="https://www.cnblogs.com/pinard/p/10825264.html" target="_blank" rel="noopener">4</a>），误差可写为：</p>
+<p>$$<br>\epsilon^{i-1}=\frac{\partial C}{\partial a^{L-1}}<br>=\frac{\partial o^{L-1}}{\partial a^{L-1}}^T\frac{\partial C}{\partial o^{L-1}}<br>=\frac{\partial o^{L-1}}{\partial a^{L-1}}^T\frac{\partial a^{L}}{\partial o^{L-1}}^T\frac{\partial C}{\partial a^{L}}<br>=f’(a^{L-1})^T(W^L)^T\epsilon^{i}<br>$$</p>
+<p>由此进行迭代，最终可求得训练参数值。</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -406,7 +427,7 @@ StartABAQUS要是想调用子程序，需要以">
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://wx-wang.github.io/2020/02/27/abaqus-zi-cheng-xu-guan-lian-jiao-cheng/">https://wx-wang.github.io/2020/02/27/abaqus-zi-cheng-xu-guan-lian-jiao-cheng/</a>
+                    <a href="https://wx-wang.github.io/2020/03/25/bp-shen-jing-wang-tui-dao/">https://wx-wang.github.io/2020/03/25/bp-shen-jing-wang-tui-dao/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -444,12 +465,8 @@ StartABAQUS要是想调用子程序，需要以">
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%95%99%E7%A8%8B/">
-                                    <span class="chip bg-color">教程</span>
-                                </a>
-                            
-                                <a href="/tags/Abaqus/">
-                                    <span class="chip bg-color">Abaqus</span>
+                                <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">机器学习</span>
                                 </a>
                             
                         </div>
@@ -615,9 +632,10 @@ StartABAQUS要是想调用子程序，需要以">
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/03/25/bp-shen-jing-wang-tui-dao/">
                     <div class="card-image">
@@ -644,9 +662,9 @@ Markdown下LaTeX公式、编号、对齐
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-25
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-25
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -663,6 +681,7 @@ Markdown下LaTeX公式、编号、对齐
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -681,37 +700,33 @@ Markdown下LaTeX公式、编号、对齐
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/02/21/wu-en-da-ji-qi-xue-xi-bi-ji/">
+                <a href="/2020/02/27/abaqus-zi-cheng-xu-guan-lian-jiao-cheng/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="吴恩达机器学习笔记">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Abaqus子程序关联教程">
                         
-                        <span class="card-title">吴恩达机器学习笔记</span>
+                        <span class="card-title">Abaqus子程序关联教程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            第一章1-1 总体介绍机器学习的用途？exa: data mining; 用户推荐； handwriting recognize …
-1-2 机器学习定义机器学习的定义？从E中学习T，并用P衡量其性能；
-1-3 监督学习 supervise
+                            写在开头本教程搜集于2018年，当时为了装abaqus子程序可谓是煞费苦心。故记录在此，以飨自己。
+限制条件目前可成功安装6.14和2016版本。其他版本的欢迎尝试。教程参考了：参考1，参考2
+StartABAQUS要是想调用子程序，需要以
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-27
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
-                                    学习笔记
-                                </a>
-                            
-                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="post-category">
-                                    计算机
+                            <a href="/categories/%E6%95%99%E7%A8%8B/" class="post-category">
+                                    教程
                                 </a>
                             
                             
@@ -721,8 +736,12 @@ Markdown下LaTeX公式、编号、对齐
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
-                        <span class="chip bg-color">机器学习</span>
+                    <a href="/tags/%E6%95%99%E7%A8%8B/">
+                        <span class="chip bg-color">教程</span>
+                    </a>
+                    
+                    <a href="/tags/Abaqus/">
+                        <span class="chip bg-color">Abaqus</span>
                     </a>
                     
                 </div>
