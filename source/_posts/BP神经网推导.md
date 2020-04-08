@@ -4,6 +4,7 @@ title: 神经网络BP法推导
 date: 2020-03-25 19:50:19
 tags: 机器学习
 categories: [学习笔记, 计算机]
+mathjax: true
 ---
 
 ## 参考文献：
@@ -54,8 +55,29 @@ $$
 \Delta{w} = -\lambda \frac{\partial C}{\partial w}
 = -\lambda \frac{\partial C}{\partial a^L} \frac{\partial a^L}{\partial w}
 = -\lambda \frac{\partial C}{\partial a^L} (o^{L-1})^T
+= -\lambda\epsilon^L(o^{L-1})^T
 $$
-令误差$\epsilon^L=\frac{\partial C}{\partial a^L}$，为了求隐藏层中的权重系数W，不妨采用数学归纳法，当已知$\epsilon^i$时，求$\epsilon^{i-1}$：
+其中：
+$$
+\epsilon^L = \begin{Bmatrix}
+\epsilon_1^L\\
+\epsilon_2^L\\ 
+\cdots \\
+\epsilon_p^L
+\end{Bmatrix}_{p\times1}^{j}
+$$
+
+令误差$\epsilon^L=\frac{\partial C}{\partial a^L}$。
+误差的求解方法如下：
+
+$$
+\frac{\partial C}{\partial a^L}=
+\frac{\partial C}{\partial \hat y}\frac{\partial \hat y}{\partial a^L}
+=(\hat y-y)\hat y^T(1-\hat y)
+$$
+
+
+为了求隐藏层中的权重系数W，不妨采用数学归纳法，当已知$\epsilon^i$时，求$\epsilon^{i-1}$：
 
 $$
 \epsilon^{i-1}=\frac{\partial C}{\partial a^{L-1}}
@@ -67,10 +89,25 @@ $$
 考虑到矩阵偏导与标量求偏导有所不同（参考[4](https://www.cnblogs.com/pinard/p/10825264.html)），误差可写为：
 
 $$
-\epsilon^{i-1}=\frac{\partial C}{\partial a^{L-1}}
-=\frac{\partial o^{L-1}}{\partial a^{L-1}}^T\frac{\partial C}{\partial o^{L-1}}
-=\frac{\partial o^{L-1}}{\partial a^{L-1}}^T\frac{\partial a^{L}}{\partial o^{L-1}}^T\frac{\partial C}{\partial a^{L}}
-=f'(a^{L-1})^T(W^L)^T\epsilon^{i}
+\epsilon^{i-1}=(\epsilon^{i})^TW\times f'(a^{L-1})
 $$
+(推导：
+设A+1层有n个神经元，A层有m个神经元
+$$
+\epsilon_i^{A}=\frac{\partial C}{\partial a_i^{A}}
+=\frac{\partial C}{\partial o_i^{A}}\frac{\partial o_i^{A}}{\partial a_i^{A}}
+=\frac{\partial C}{\partial a^{A+1}}\frac{\partial a^{A+1}}{\partial o_i^{A}}\frac{\partial o_i^{A}}{\partial a_i^{A}}
+=\sum_{j=1}^{j=n}{(\frac{\partial C}{\partial a_i^{A+1}}\frac{\partial a_i^{A+1}}{\partial o_i^{A}})}\frac{\partial o_i^{A}}{\partial a_i^{A}}
+$$
+利用向量形式表示得：
+$$
+\epsilon_i^{A}=(\epsilon^{A+1})^T(W_i)_{n\times1}\times\frac{\partial o_i^{A}}{\partial a_i^{A}}
+$$
+则：
+$$
+\epsilon^{A}=((W)_{n\times m})^T\epsilon^{A+1}\times\frac{\partial o_i^{A}}{\partial a_i^{A}}
+$$
+
+)
 
 由此进行迭代，最终可求得训练参数值。
